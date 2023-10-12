@@ -7,6 +7,7 @@ import * as ImagePicker from "expo-image-picker";
 import { baseUrl } from "../shared/baseUrl";
 import logo from "../assets/images/logo.png";
 import * as ImageManipulator from "expo-image-manipulator";
+import * as MediaLibrary from "expo-media-library";
 
 const LoginTab = ({ navigation }) => {
   const [username, setUsername] = useState("");
@@ -154,6 +155,29 @@ const RegisterTab = () => {
       }
     }
   };
+
+  //The bonus task but I could not get it to work I will like to discuss what is missing from this codes
+  // const getImageFromGallery = async () => {
+  //   //Request permissions
+  //   const mediaLibraryPermissions =
+  //     await MediaLibrary.requestPermissionsAsync();
+
+  //   // If you have the rights
+  //   if (mediaLibraryPermissions.status === "granted") {
+  //     const capturedImage = await ImagePicker.launchImageLibraryAsync({
+  //       allowsEditing: true,
+  //       aspect: [1, 1],
+  //     });
+
+  //     if (!capturedImage.canceled) {
+  //       const processedUri = processImage(capturedImage.uri);
+
+  //       // Save the processed image with MediaLibrary.saveToLibraryAsync(). This method is deprecated so I use createAssetAsync()
+  //       const asset = await MediaLibrary.createAssetAsync(processedUri);
+  //       console.log("processed image saved:", asset);
+  //     }
+  //   }
+  // };
 
   const getImageFromGallery = async () => {
     const mediaLibraryPermissions =
